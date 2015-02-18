@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Tp Cards Highlighter
 // @namespace   https://yoox.tpondemand.com/
-// @include     https://yoox.tpondemand.com/RestUI/Board.aspx*
+// @include     https://yoox.tpondemand.com/RestUI/*
 // @version     1.1
 // @grant       none
 // ==/UserScript==
@@ -9,9 +9,9 @@
 var loadingDelay = 5000;
 var cardElement = $('.i-role-card');
 var bugColor = '#FFE6EF';
-var userStoryWithBugsColor = '#FF7A7A';
+var userStoryWithBugsColor = '#FFA55B';
 var myUserStories = '#38B1F7';
-var userNameSurname 'Marco Trevisani'
+var userNameSurname = 'Marco Trevisani';
 // ==/Options==
 
 function colorise() {

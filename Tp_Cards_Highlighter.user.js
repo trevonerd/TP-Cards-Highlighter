@@ -18,11 +18,23 @@ function colorise() {
     // Colorize Bug Cards
     $('.tau-card-v2_type_bug').css('background-color', bugColor);
     
-    // Colorize User Stories with Bugs
-    $('.tau-entity-icon--bug').parents('.tau-card-v2_type_userstory').css('backgroundColor', userStoryWithBugsColor);
-    
     // Colorize My User Stories
     $('.tau-avatar img[title="' + userNameSurname + '"]').parents('.tau-card-v2_type_userstory').css('backgroundColor', myUserStories);
+    
+    // Colorize My User Stories with Bugs
+    $('.tau-entity-icon--bug').each(function() {
+        var userStory = $(this).parents('.tau-card-v2_type_userstory');
+        if(isAssignedToMe(userStory)) {
+            userStory.css('backgroundColor', userStoryWithBugsColor);
+        }
+    });
+};
+
+function isAssignedToMe(element) {
+    if (element.find('.tau-avatar img[title="' + userNameSurname + '"]').length) {
+        return true;
+    }
+    return false;
 };
 
 function hasBugs(element) {

@@ -28,7 +28,7 @@ function colorise() {
             userStory.css('backgroundColor', userStoryWithBugsColor);
         }
     });
-};
+}
 
 function isAssignedToMe(element) {
     if (element.find('.tau-avatar img[title="' + userNameSurname + '"]').length) {
@@ -39,14 +39,14 @@ function isAssignedToMe(element) {
 
 function hasBugs(element) {
     $('.i-role-card').find('.tau-entity-icon--bug');
-};
+}
 
 function add_button() {
-    var new_button = $('<div class="tau-menu-item tau-menu-item-reports tau-user-menu"><span data-title="Colorize" class="tau-popup-link tau-extension-board-tooltip trevo-colorize">Colorize</span></div>');
+    var new_button = $('<div class="tau-main-menu__item tau-menu-item-reports tau-user-menu tau-extension-board-tooltip"><span class="tau-icon-general tau-icon-reports icon-coffee"></span><span data-title="Colorize" class="tau-main-menu__label trevo-colorize">Colorize</span></div>');
     new_button.on('click', colorise);
-    $('.tau-menu-section').first().prepend(new_button);
-    addGlobalStyle('.trevo-colorize:before { background-position: -620px -210px !important; }');
-};
+    $('.tau-main-menu__section').first().prepend(new_button);
+    addGlobalStyle('.icon-coffee:before { background-position: -618px -210px !important; }');
+}
 
 function addGlobalStyle(css) {
     var head,
@@ -59,7 +59,7 @@ function addGlobalStyle(css) {
     style.type = 'text/css';
     style.innerHTML = css;
     head.appendChild(style);
-};
+}
 
 $(document).ready(function () {
     setTimeout(function () {
@@ -71,7 +71,6 @@ $(document).ready(function () {
 /*
 tau-entity-icon--bug
 tau-avatar img title="[**Nome Cognome**]"
-
 .tau-ui-size-m .tau-card-v2_type_epic,
 .tau-ui-size-m .tau-card-v2_type_feature,
 .tau-ui-size-m .tau-card-v2_type_userstory,
